@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-12-11 19:43+0100\n"
+"POT-Creation-Date: 2018-12-11 21:16+0100\n"
 "PO-Revision-Date: 2018-12-10 16:27+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hu\n"
@@ -117,12 +117,20 @@ msgstr "Követed a felhasználót: %(username)s!"
 msgid "Search"
 msgstr "Keresés"
 
-#: app/templates/_post.html:14
+#: app/main/routes.py:150
+msgid "Your message has been sent."
+msgstr ""
+
+#: app/main/routes.py:152
+msgid "Send Message"
+msgstr ""
+
+#: app/templates/_post.html:16
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s mondta %(when)s"
 
-#: app/templates/_post.html:25
+#: app/templates/_post.html:27
 msgid "Translate"
 msgstr "Fordítás"
 
@@ -138,11 +146,15 @@ msgstr "Belépés"
 msgid "Profile"
 msgstr "Profil"
 
-#: app/templates/base.html:59
+#: app/templates/base.html:57 app/templates/messages.html:4
+msgid "Messages"
+msgstr ""
+
+#: app/templates/base.html:62
 msgid "Logout"
 msgstr "Kijelentkezés"
 
-#: app/templates/base.html:98
+#: app/templates/base.html:101
 msgid "Error: Could not contact server."
 msgstr "Hiba: nem lehet csatlakozni a szerverhez"
 
@@ -151,13 +163,21 @@ msgstr "Hiba: nem lehet csatlakozni a szerverhez"
 msgid "Hi, %(username)s!"
 msgstr "Üdv, %(username)s!"
 
-#: app/templates/index.html:17 app/templates/user.html:31
+#: app/templates/index.html:17 app/templates/user.html:38
 msgid "Newer posts"
 msgstr "Újabb posztok"
 
-#: app/templates/index.html:22 app/templates/user.html:36
+#: app/templates/index.html:22 app/templates/user.html:43
 msgid "Older posts"
 msgstr "Régebbi posztok"
+
+#: app/templates/messages.html:12
+msgid "Newer messages"
+msgstr ""
+
+#: app/templates/messages.html:17
+msgid "Older messages"
+msgstr ""
 
 #: app/templates/search.html:4
 msgid "Search Results"
@@ -171,20 +191,25 @@ msgstr "Előző találatok"
 msgid "Next results"
 msgstr "Következő találatok"
 
+#: app/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s"
+msgstr ""
+
 #: app/templates/user.html:8
 msgid "User"
 msgstr "Felhasználó"
 
-#: app/templates/user.html:11
+#: app/templates/user.html:11 app/templates/user_popup.html:16
 msgid "Last seen on"
 msgstr "Utoljára aktív"
 
-#: app/templates/user.html:13
+#: app/templates/user.html:13 app/templates/user_popup.html:21
 #, python-format
 msgid "%(count)d followers"
 msgstr "%(count)d felhasználó követi"
 
-#: app/templates/user.html:13
+#: app/templates/user.html:13 app/templates/user_popup.html:22
 #, python-format
 msgid "%(count)d following"
 msgstr "%(count)d felhasználót követ"
@@ -193,13 +218,17 @@ msgstr "%(count)d felhasználót követ"
 msgid "Edit your profile"
 msgstr "Profil Szerkesztése"
 
-#: app/templates/user.html:17
+#: app/templates/user.html:17 app/templates/user_popup.html:27
 msgid "Follow"
 msgstr "Követés"
 
-#: app/templates/user.html:19
+#: app/templates/user.html:19 app/templates/user_popup.html:31
 msgid "Unfollow"
 msgstr "Követés leállítása"
+
+#: app/templates/user.html:24
+msgid "Send private message."
+msgstr ""
 
 #: app/templates/auth/login.html:12
 msgid "New User?"
