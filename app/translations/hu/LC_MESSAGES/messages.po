@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-12-11 08:54+0100\n"
+"POT-Creation-Date: 2018-12-11 19:43+0100\n"
 "PO-Revision-Date: 2018-12-10 16:27+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hu\n"
@@ -18,154 +18,131 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: app/email.py:22
-msgid "[MicroBlog] | Reset Your Password"
-msgstr "[MicroBlog] | Elfelejtett Jelszó"
-
-#: app/forms.py:11 app/forms.py:18 app/forms.py:37
-msgid "Username"
-msgstr "Felhasználónév"
-
-#: app/forms.py:12 app/forms.py:20 app/forms.py:63
-msgid "Password"
-msgstr "Jelszó"
-
-#: app/forms.py:13
-msgid "Remember Me"
-msgstr "Emlékezz rám"
-
-#: app/forms.py:14 app/routes.py:79 app/templates/login.html:5
-msgid "Sign In"
-msgstr "Bejelentkezés"
-
-#: app/forms.py:19 app/forms.py:58
-msgid "Email"
-msgstr "Email"
-
-#: app/forms.py:22 app/forms.py:65
-msgid "Repeat Password"
-msgstr "Jelszó ismét"
-
-#: app/forms.py:23 app/routes.py:100 app/templates/register.html:5
-msgid "Register"
-msgstr "Regisztráció"
-
-#: app/forms.py:28 app/forms.py:49
-msgid "Please use a different username."
-msgstr "Ez a felhasználónév már foglalt."
-
-#: app/forms.py:33
-msgid "Please use a different email address."
-msgstr "Ez az e-mail cím már használatban van."
-
-#: app/forms.py:38
-msgid "About me"
-msgstr "Rólam"
-
-#: app/forms.py:39 app/forms.py:54
-msgid "Submit"
-msgstr "Elküldés"
-
-#: app/forms.py:53
-msgid "Say something"
-msgstr "Mondj valamit"
-
-#: app/forms.py:59 app/forms.py:67
-msgid "Request Password Reset"
-msgstr "Jelszó pótlás"
-
-#: app/routes.py:36
-msgid "Your post is now live!"
-msgstr "Üzenet elküldve"
-
-#: app/routes.py:45 app/templates/base.html:21
-msgid "Home"
-msgstr "Kezdőlap"
-
-#: app/routes.py:60 app/templates/base.html:22
-msgid "Explore"
-msgstr "Felfedezés"
-
-#: app/routes.py:72
-msgid "Invalid username or password"
-msgstr "Érvénytelen felhasználónév vagy jelszó"
-
-#: app/routes.py:98
-msgid "Congratulations, you are now a registered user!"
-msgstr "Sikeres regisztráció!"
-
-#: app/routes.py:126
-msgid "Your changes have been saved."
-msgstr "Módosítások elmentve."
-
-#: app/routes.py:131 app/templates/edit_profile.html:5
-msgid "Edit Profile"
-msgstr "Profil Szerkesztése"
-
-#: app/routes.py:176
-msgid "Check your email for the instructions to reset your password"
-msgstr "E-mail elküldve"
-
-#: app/routes.py:178 app/templates/reset_password_request.html:5
-msgid "Reset Password"
-msgstr "Jelszó Pótlása"
-
-#: app/routes.py:192
-msgid "Your password has been reset."
-msgstr "Jelszó megújítva"
+#: app/__init__.py:19
+msgid "Please log in to access this page."
+msgstr "Ehhez az oldalhoz bejelentkezés szükséges."
 
 #: app/translate.py:10
 msgid "Error: the translation service is not configured."
 msgstr "Hiba: szolgáltatás elérhetetlen"
 
-#: app/translate.py:15
+#: app/translate.py:18
 msgid "Error: the translation service failed."
 msgstr "Hiba: szolgáltatás hiba"
 
-#: app/templates/404.html:4
-msgid "Not Found"
-msgstr "Nem Található"
+#: app/auth/email.py:8
+msgid "[Microblog] Reset Your Password"
+msgstr "[Microblog] Elfelejtett jelszó"
 
-#: app/templates/404.html:5 app/templates/500.html:6
-msgid "Back"
-msgstr "Vissza"
+#: app/auth/forms.py:25 app/main/forms.py:22
+msgid "Please use a different username."
+msgstr "Ez a felhasználónév már foglalt."
 
-#: app/templates/500.html:4
-msgid "An unexpected error has occurred"
-msgstr "Rendszerhiba"
+#: app/auth/forms.py:30
+msgid "Please use a different email address."
+msgstr "Ez az e-mail cím már használatban van."
 
-#: app/templates/500.html:5
-msgid "The administrator has been notified. Sorry for the inconvenience!"
-msgstr ""
-"A weboldal üzemeltetőjét értesítette rendszerünk. Elnézést a "
-"kellemetlenségért!"
+#: app/auth/routes.py:20
+msgid "Invalid username or password"
+msgstr "Érvénytelen felhasználónév vagy jelszó"
+
+#: app/auth/routes.py:27 app/templates/auth/login.html:5
+msgid "Sign In"
+msgstr "Bejelentkezés"
+
+#: app/auth/routes.py:46
+msgid "You are now a registered user!"
+msgstr "Sikeres regisztráció!"
+
+#: app/auth/routes.py:48 app/templates/auth/register.html:5
+msgid "Register"
+msgstr "Regisztráció"
+
+#: app/auth/routes.py:60
+msgid "Check your email for the instructions to reset your password"
+msgstr "E-mail elküldve"
+
+#: app/auth/routes.py:62 app/templates/auth/reset_password_request.html:5
+msgid "Reset Password"
+msgstr "Jelszó Pótlása"
+
+#: app/auth/routes.py:76
+msgid "Your password has been reset"
+msgstr "Jelszó sikeresen megújítva"
+
+#: app/main/routes.py:34
+msgid "Your post is now live!"
+msgstr "Üzenet elküldve"
+
+#: app/main/routes.py:40 app/templates/base.html:24
+msgid "Home"
+msgstr "Kezdőlap"
+
+#: app/main/routes.py:50 app/templates/base.html:30
+msgid "Explore"
+msgstr "Felfedezés"
+
+#: app/main/routes.py:72
+msgid "Your changes has been saved."
+msgstr "Módosítások mentése megtörtént"
+
+#: app/main/routes.py:77 app/templates/edit_profile.html:5
+msgid "Edit Profile"
+msgstr "Profil Szerkesztése"
+
+#: app/main/routes.py:85 app/main/routes.py:101
+#, python-format
+msgid "User %(username)s not found."
+msgstr "%(username)s felhasználó nem található."
+
+#: app/main/routes.py:88
+msgid "You cannot unfollow yourself!"
+msgstr "Nem állíthatod le saját magad követését!"
+
+#: app/main/routes.py:92
+#, python-format
+msgid "You are not following %(username)s."
+msgstr "Már nem követed a felhasználót: %(username)s"
+
+#: app/main/routes.py:104
+msgid "You cannot follow yourself!"
+msgstr "Nem követheted saját magad!"
+
+#: app/main/routes.py:108
+#, python-format
+msgid "You are following %(username)s!"
+msgstr "Követed a felhasználót: %(username)s!"
+
+#: app/main/routes.py:131
+msgid "Search"
+msgstr "Keresés"
 
 #: app/templates/_post.html:14
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s mondta %(when)s"
 
-#: app/templates/_post.html:26
+#: app/templates/_post.html:25
 msgid "Translate"
 msgstr "Fordítás"
 
 #: app/templates/base.html:4
-msgid "Welcome to MicroBlog"
+msgid "Welcome to Microblog"
 msgstr "Üdv a MicroBlog-on"
 
-#: app/templates/base.html:26
+#: app/templates/base.html:46
 msgid "Login"
 msgstr "Belépés"
 
-#: app/templates/base.html:28
+#: app/templates/base.html:53
 msgid "Profile"
 msgstr "Profil"
 
-#: app/templates/base.html:29
+#: app/templates/base.html:59
 msgid "Logout"
 msgstr "Kijelentkezés"
 
-#: app/templates/base.html:66
+#: app/templates/base.html:98
 msgid "Error: Could not contact server."
 msgstr "Hiba: nem lehet csatlakozni a szerverhez"
 
@@ -174,57 +151,133 @@ msgstr "Hiba: nem lehet csatlakozni a szerverhez"
 msgid "Hi, %(username)s!"
 msgstr "Üdv, %(username)s!"
 
-#: app/templates/index.html:17 app/templates/user.html:29
+#: app/templates/index.html:17 app/templates/user.html:31
 msgid "Newer posts"
 msgstr "Újabb posztok"
 
-#: app/templates/index.html:22 app/templates/user.html:34
+#: app/templates/index.html:22 app/templates/user.html:36
 msgid "Older posts"
 msgstr "Régebbi posztok"
 
-#: app/templates/login.html:12
-msgid "New User?"
-msgstr "Új felhasználó?"
+#: app/templates/search.html:4
+msgid "Search Results"
+msgstr "Keresés eredményei"
 
-#: app/templates/login.html:12
-msgid "Click to Register!"
-msgstr "Regisztrálj!"
+#: app/templates/search.html:13
+msgid "Previous results"
+msgstr "Előző találatok"
 
-#: app/templates/login.html:14
-msgid "Forgot Your Password?"
-msgstr "Elfelejtett jelszó?"
+#: app/templates/search.html:18
+msgid "Next results"
+msgstr "Következő találatok"
 
-#: app/templates/login.html:15
-msgid "Click to Reset It"
-msgstr "Itt pótolhatod"
+#: app/templates/user.html:8
+msgid "User"
+msgstr "Felhasználó"
 
-#: app/templates/reset_password.html:5
-msgid "Reset Your Password"
-msgstr "Elfelejtett jelszó"
-
-#: app/templates/user.html:10
+#: app/templates/user.html:11
 msgid "Last seen on"
 msgstr "Utoljára aktív"
 
-#: app/templates/user.html:11
+#: app/templates/user.html:13
 #, python-format
 msgid "%(count)d followers"
 msgstr "%(count)d felhasználó követi"
 
-#: app/templates/user.html:11
+#: app/templates/user.html:13
 #, python-format
 msgid "%(count)d following"
 msgstr "%(count)d felhasználót követ"
 
-#: app/templates/user.html:13
+#: app/templates/user.html:15
 msgid "Edit your profile"
 msgstr "Profil Szerkesztése"
 
-#: app/templates/user.html:15
+#: app/templates/user.html:17
 msgid "Follow"
 msgstr "Követés"
 
-#: app/templates/user.html:17
+#: app/templates/user.html:19
 msgid "Unfollow"
 msgstr "Követés leállítása"
+
+#: app/templates/auth/login.html:12
+msgid "New User?"
+msgstr "Új felhasználó?"
+
+#: app/templates/auth/login.html:12
+msgid "Click to Register!"
+msgstr "Regisztrálj!"
+
+#: app/templates/auth/login.html:14
+msgid "Forgot Your Password?"
+msgstr "Elfelejtett jelszó?"
+
+#: app/templates/auth/login.html:15
+msgid "Click to Reset It"
+msgstr "Itt pótolhatod"
+
+#: app/templates/auth/reset_password.html:5
+msgid "Reset Your Password"
+msgstr "Elfelejtett jelszó"
+
+#: app/templates/errors/404.html:4
+msgid "Not Found"
+msgstr "Nem Található"
+
+#: app/templates/errors/404.html:5 app/templates/errors/500.html:6
+msgid "Back"
+msgstr "Vissza"
+
+#: app/templates/errors/500.html:4
+msgid "An unexpected error has occurred"
+msgstr "Rendszerhiba"
+
+#: app/templates/errors/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr ""
+"A weboldal üzemeltetőjét értesítette rendszerünk. Elnézést a "
+"kellemetlenségért!"
+
+#~ msgid "[MicroBlog] | Reset Your Password"
+#~ msgstr "[MicroBlog] | Elfelejtett Jelszó"
+
+#~ msgid "Username"
+#~ msgstr "Felhasználónév"
+
+#~ msgid "Password"
+#~ msgstr "Jelszó"
+
+#~ msgid "Remember Me"
+#~ msgstr "Emlékezz rám"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid "Repeat Password"
+#~ msgstr "Jelszó ismét"
+
+#~ msgid "About me"
+#~ msgstr "Rólam"
+
+#~ msgid "Submit"
+#~ msgstr "Elküldés"
+
+#~ msgid "Say something"
+#~ msgstr "Mondj valamit"
+
+#~ msgid "Request Password Reset"
+#~ msgstr "Jelszó pótlás"
+
+#~ msgid "Congratulations, you are now a registered user!"
+#~ msgstr "Sikeres regisztráció!"
+
+#~ msgid "Your changes have been saved."
+#~ msgstr "Módosítások elmentve."
+
+#~ msgid "Your password has been reset."
+#~ msgstr "Jelszó megújítva"
+
+#~ msgid "Welcome to MicroBlog"
+#~ msgstr "Üdv a MicroBlog-on"
 
