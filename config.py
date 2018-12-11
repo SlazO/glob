@@ -6,7 +6,7 @@ POSTGRES = {
     'user': 'microblog_user',
     'pw': 'pass123@',
     'db': 'microblog_db',
-    'host': '192.168.1.193',
+    'host': '192.168.1.150',
     'port': '5432',
 }
 

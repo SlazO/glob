@@ -1,87 +1,124 @@
-2018-12-10 10:37:12,887 ERROR: Exception on /favicon.ico [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+2018-12-11 08:23:37,244 ERROR: Exception on /register [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1791, in dispatch_request
-    self.raise_routing_exception(req)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1774, in raise_routing_exception
-    raise request.routing_exception
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\ctx.py", line 336, in match_request
-    self.url_adapter.match(return_rule=True)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\routing.py", line 1581, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2158, in _wrap_pool_connect
+    return fn()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 400, in connect
+    return _ConnectionFairy._checkout(self)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 788, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 529, in checkout
+    rec = pool._do_get()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 1193, in _do_get
+    self._dec_overflow()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 249, in reraise
+    raise value
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 1190, in _do_get
+    return self._create_connection()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 347, in _create_connection
+    return _ConnectionRecord(self)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 474, in __init__
+    self.__connect(first_connect_check=True)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 671, in __connect
+    connection = pool._invoke_creator(self)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\strategies.py", line 106, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 412, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\psycopg2\__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "192.168.1.193" and accepting
+	TCP/IP connections on port 5432?
 
-During handling of the above exception, another exception occurred:
+
+The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1713, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1644, in handle_http_exception
-    return handler(e)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\errors.py", line 7, in not_found_error
-    return render_template('404.html'), 404
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 92, in register
+    if form.validate_on_submit():
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_wtf\form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\wtforms\form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\wtforms\form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\wtforms\fields\core.py", line 206, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\wtforms\fields\core.py", line 226, in _run_validation_chain
+    validator(form, self)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\forms.py", line 26, in validate_username
+    user = User.query.filter_by(username=username.data).first()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2895, in first
+    ret = list(self[0:1])
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2687, in __getitem__
+    return list(res)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2995, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3016, in _execute_and_instances
+    close_with_result=True)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3025, in _get_bind_args
+    **kw
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3007, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1046, in connection
+    execution_options=execution_options)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1051, in _connection_for_bind
+    engine, execution_options)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 409, in _connection_for_bind
+    conn = bind.contextual_connect()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2123, in contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2162, in _wrap_pool_connect
+    e, dialect, self)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception_noconnection
+    exc_info
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\templates\base.html", line 47, in template
-    {% block content %}{% endblock %}
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\environment.py", line 1005, in render
-    return concat(self.root_render_func(self.new_context(vars)))
-  File "C:\Users\Balint\PycharmProjects\microblog\app\templates\404.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\templates\base.html", line 47, in template
-    {% block content %}{% endblock %}
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\environment.py", line 543, in _generate
-    optimized=self.optimized)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\compiler.py", line 82, in generate
-    generator.visit(node)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\compiler.py", line 718, in visit_Template
-    self.fail('block %r defined twice' % block.name, block.lineno)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\compiler.py", line 315, in fail
-    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateAssertionError: block 'content' defined twice
-2018-12-10 10:37:38,987 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:47]
-2018-12-10 10:39:35,253 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:47]
-2018-12-10 10:43:16,778 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:49]
-2018-12-10 16:13:32,201 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:14:01,772 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:16:44,700 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:17:39,450 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:18:26,950 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:19:06,261 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:21:51,767 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:27:30,928 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:27:36,797 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:27:50,216 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:27:56,643 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:28:06,187 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:28:12,835 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:34:02,406 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:34:08,803 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:38:33,585 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:40:10,787 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:40:14,838 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:45:19,694 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:45:27,559 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-10 16:47:59,384 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-11 08:18:48,727 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2158, in _wrap_pool_connect
+    return fn()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 400, in connect
+    return _ConnectionFairy._checkout(self)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 788, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 529, in checkout
+    rec = pool._do_get()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 1193, in _do_get
+    self._dec_overflow()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 249, in reraise
+    raise value
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 1190, in _do_get
+    return self._create_connection()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 347, in _create_connection
+    return _ConnectionRecord(self)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 474, in __init__
+    self.__connect(first_connect_check=True)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\pool.py", line 671, in __connect
+    connection = pool._invoke_creator(self)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\strategies.py", line 106, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 412, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\psycopg2\__init__.py", line 130, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "192.168.1.193" and accepting
+	TCP/IP connections on port 5432?
+ (Background on this error at: http://sqlalche.me/e/e3q8)
