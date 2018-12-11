@@ -1,0 +1,100 @@
+2018-12-11 16:23:09,450 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:23:17,882 ERROR: Exception on /auth/login [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\auth\routes.py", line 19, in login
+    if user is not None or not User.check_password(form.password.data):
+TypeError: check_password() missing 1 required positional argument: 'password'
+2018-12-11 16:23:31,672 ERROR: Exception on /auth/login [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\auth\routes.py", line 19, in login
+    if user is not None or not User.check_password(form.password.data):
+TypeError: check_password() missing 1 required positional argument: 'password'
+2018-12-11 16:25:09,738 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:25:26,052 ERROR: Exception on /auth/login [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\auth\routes.py", line 19, in login
+    if user is None or not User.check_password(form.password.data):
+TypeError: check_password() missing 1 required positional argument: 'password'
+2018-12-11 16:25:36,159 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:25:45,819 ERROR: Exception on /explore [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 46, in explore
+    page = request.arg.get('page', 1, type=int)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'Request' object has no attribute 'arg'
+2018-12-11 16:26:06,322 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:26:55,424 ERROR: Exception on /search [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 128, in search
+    if total > page * current_app.config['POST_PER_PAGE'] else None
+KeyError: 'POST_PER_PAGE'
+2018-12-11 16:27:21,744 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:36:48,117 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:40:31,798 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:46:19,890 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:48:59,026 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
