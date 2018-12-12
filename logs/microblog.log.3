@@ -1,4 +1,4 @@
-2018-12-11 08:26:49,240 ERROR: Exception on /index [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+2018-12-11 21:50:06,700 ERROR: Exception on /favicon.ico [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,31 +8,24 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 32, in index
-    post = Post(body=form.post.data, author=current_user, language=language)
-  File "<string>", line 4, in __init__
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\state.py", line 424, in _initialize_instance
-    manager.dispatch.init_failure(self, args, kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 249, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\state.py", line 421, in _initialize_instance
-    return manager.original_init(*mixed[1:], **kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\ext\declarative\base.py", line 747, in _declarative_constructor
-    (k, cls_.__name__))
-TypeError: 'language' is an invalid keyword argument for Post
-2018-12-11 08:27:41,378 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-11 08:27:46,981 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-11 08:28:28,677 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-11 08:28:31,788 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-11 08:28:37,334 ERROR: Exception on / [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 17, in before_request
+    db.session.commit()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
+    self.transaction.commit()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
+    fn(*args, **kw)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 34, in after_commit
+    for obj in session._changes['add']:
+TypeError: 'NoneType' object is not subscriptable
+2018-12-11 21:50:12,335 ERROR: Exception on /login [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -42,42 +35,24 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 32, in index
-    post = Post(body=form.post.data, author=current_user, language=language)
-  File "<string>", line 4, in __init__
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\state.py", line 424, in _initialize_instance
-    manager.dispatch.init_failure(self, args, kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 249, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\state.py", line 421, in _initialize_instance
-    return manager.original_init(*mixed[1:], **kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\ext\declarative\base.py", line 747, in _declarative_constructor
-    (k, cls_.__name__))
-TypeError: 'language' is an invalid keyword argument for Post
-2018-12-11 08:29:52,409 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-11 08:30:11,227 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-11 08:30:15,590 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-11 08:54:53,711 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-11 08:56:42,382 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-11 08:56:52,665 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-11 09:20:51,611 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
-2018-12-11 15:31:08,364 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:12:51,091 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:17:58,899 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:18:05,425 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:18:10,261 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:19:15,000 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:19:29,798 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:20:06,301 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:21:20,608 ERROR: Exception on /auth/reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6NCwiZXhwIjoxNTQ0NTQyMjYzLjQxNjUzNzh9.N9V0-6gRnbSW_j229rWTQFAWOi9UD8HL_Jsa4GvNnhA [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 17, in before_request
+    db.session.commit()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
+    self.transaction.commit()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
+    fn(*args, **kw)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 34, in after_commit
+    for obj in session._changes['add']:
+TypeError: 'NoneType' object is not subscriptable
+2018-12-11 21:50:13,606 ERROR: Exception on /favicon.ico [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -87,17 +62,24 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\auth\routes.py", line 67, in reset_password
-    if current_user.is_authencticated:
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-AttributeError: 'AnonymousUserMixin' object has no attribute 'is_authencticated'
-2018-12-11 16:21:47,152 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:22:09,337 ERROR: Exception on /auth/login [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 17, in before_request
+    db.session.commit()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
+    self.transaction.commit()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
+    fn(*args, **kw)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 34, in after_commit
+    for obj in session._changes['add']:
+TypeError: 'NoneType' object is not subscriptable
+2018-12-11 21:50:17,160 ERROR: Exception on /register [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -107,10 +89,20 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\auth\routes.py", line 19, in login
-    if user is not None or not user.check_password(form.password.data):
-AttributeError: 'NoneType' object has no attribute 'check_password'
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 17, in before_request
+    db.session.commit()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
+    self.transaction.commit()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
+    fn(*args, **kw)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 34, in after_commit
+    for obj in session._changes['add']:
+TypeError: 'NoneType' object is not subscriptable

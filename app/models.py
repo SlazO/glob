@@ -32,17 +32,24 @@ class SearchableMixin(object):
     @classmethod
     def after_commit(cls, session):
         for obj in session._changes['add']:
-            add_to_index(cls.__tablename__, obj)
+            if isinstance(obj, SearchableMixin):
+                add_to_index(obj.__tablename__, obj)
         for obj in session._changes['update']:
-            add_to_index(cls.__tablename__, obj)
+            if isinstance(obj, SearchableMixin):
+                add_to_index(obj.__tablename__, obj)
         for obj in session._changes['delete']:
-            remove_from_index(cls.__tablename__, obj)
+            if isinstance(obj, SearchableMixin):
+                remove_from_index(obj.__tablename__, obj)
         session._changes = None
 
     @classmethod
     def reindex(cls):
         for obj in cls.query:
             add_to_index(cls.__tablename__, obj)
+
+
+db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit)
+db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit)
 
 
 followers = db.Table(
@@ -66,7 +73,7 @@ class User(UserMixin, db.Model):
         secondaryjoin=(followers.c.followed_id == id),
         backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
     messages_sent = db.relationship('Message', foreign_keys='Message.sender_id', backref='author', lazy='dynamic')
-    messages_received = db.relationship('Message', foreign_keys='Message.recipient._id', backref='recipient', lazy='dynamic')
+    messages_received = db.relationship('Message', foreign_keys='Message.recipient_id', backref='recipient', lazy='dynamic')
     last_message_read_time = db.Column(db.DateTime)
     notifications = db.relationship('Notification', backref='user', lazy='dynamic')
 

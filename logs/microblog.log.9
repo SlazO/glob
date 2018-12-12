@@ -1,475 +1,4 @@
-2018-12-09 22:23:04,770 INFO: MicroBlog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:45]
-2018-12-09 22:23:08,011 ERROR: Exception on / [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-psycopg2.ProgrammingError: relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 79, in before_request
-    if current_user.is_authenticated:
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
-    return self.__local()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
-    current_app.login_manager._load_user()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
-    return self.reload_user()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
-    user = self.user_callback(user_id)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 10, in load_user
-    return User.query.get(int(id))
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 924, in get
-    ident, loading.load_on_pk_identity)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1007, in _get_impl
-    return db_load_fn(self, primary_key_identity)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 250, in load_on_pk_identity
-    return q.one()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2954, in one
-    ret = self.one_or_none()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2924, in one_or_none
-    ret = list(self)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2995, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3018, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
- [SQL: 'SELECT "user".id AS user_id, "user".username AS user_username, "user".email AS user_email, "user".password_hash AS user_password_hash, "user".about_me AS user_about_me, "user".last_seen AS user_last_seen \nFROM "user" \nWHERE "user".id = %(param_1)s'] [parameters: {'param_1': 1}] (Background on this error at: http://sqlalche.me/e/f405)
-2018-12-09 22:23:08,229 ERROR: Exception on /favicon.ico [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-psycopg2.ProgrammingError: relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 79, in before_request
-    if current_user.is_authenticated:
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
-    return self.__local()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
-    current_app.login_manager._load_user()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
-    return self.reload_user()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
-    user = self.user_callback(user_id)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 10, in load_user
-    return User.query.get(int(id))
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 924, in get
-    ident, loading.load_on_pk_identity)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1007, in _get_impl
-    return db_load_fn(self, primary_key_identity)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 250, in load_on_pk_identity
-    return q.one()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2954, in one
-    ret = self.one_or_none()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2924, in one_or_none
-    ret = list(self)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2995, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3018, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
- [SQL: 'SELECT "user".id AS user_id, "user".username AS user_username, "user".email AS user_email, "user".password_hash AS user_password_hash, "user".about_me AS user_about_me, "user".last_seen AS user_last_seen \nFROM "user" \nWHERE "user".id = %(param_1)s'] [parameters: {'param_1': 1}] (Background on this error at: http://sqlalche.me/e/f405)
-2018-12-09 22:24:26,772 INFO: MicroBlog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:45]
-2018-12-09 22:24:28,278 ERROR: Exception on / [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-psycopg2.ProgrammingError: relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 12, in before_request
-    if current_user.is_authenticated:
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
-    return self.__local()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
-    current_app.login_manager._load_user()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
-    return self.reload_user()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
-    user = self.user_callback(user_id)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 10, in load_user
-    return User.query.get(int(id))
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 924, in get
-    ident, loading.load_on_pk_identity)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1007, in _get_impl
-    return db_load_fn(self, primary_key_identity)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 250, in load_on_pk_identity
-    return q.one()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2954, in one
-    ret = self.one_or_none()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2924, in one_or_none
-    ret = list(self)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2995, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3018, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
- [SQL: 'SELECT "user".id AS user_id, "user".username AS user_username, "user".email AS user_email, "user".password_hash AS user_password_hash, "user".about_me AS user_about_me, "user".last_seen AS user_last_seen \nFROM "user" \nWHERE "user".id = %(param_1)s'] [parameters: {'param_1': 1}] (Background on this error at: http://sqlalche.me/e/f405)
-2018-12-09 22:24:28,455 ERROR: Exception on /favicon.ico [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-psycopg2.ProgrammingError: relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 12, in before_request
-    if current_user.is_authenticated:
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
-    return self.__local()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
-    current_app.login_manager._load_user()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
-    return self.reload_user()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
-    user = self.user_callback(user_id)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 10, in load_user
-    return User.query.get(int(id))
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 924, in get
-    ident, loading.load_on_pk_identity)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1007, in _get_impl
-    return db_load_fn(self, primary_key_identity)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 250, in load_on_pk_identity
-    return q.one()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2954, in one
-    ret = self.one_or_none()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2924, in one_or_none
-    ret = list(self)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2995, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3018, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
- [SQL: 'SELECT "user".id AS user_id, "user".username AS user_username, "user".email AS user_email, "user".password_hash AS user_password_hash, "user".about_me AS user_about_me, "user".last_seen AS user_last_seen \nFROM "user" \nWHERE "user".id = %(param_1)s'] [parameters: {'param_1': 1}] (Background on this error at: http://sqlalche.me/e/f405)
-2018-12-09 22:32:08,302 ERROR: Exception on /user/BalintBalogh [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-psycopg2.ProgrammingError: relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 12, in before_request
-    if current_user.is_authenticated:
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
-    return self.__local()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
-    current_app.login_manager._load_user()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
-    return self.reload_user()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
-    user = self.user_callback(user_id)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 10, in load_user
-    return User.query.get(int(id))
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 924, in get
-    ident, loading.load_on_pk_identity)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1007, in _get_impl
-    return db_load_fn(self, primary_key_identity)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 250, in load_on_pk_identity
-    return q.one()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2954, in one
-    ret = self.one_or_none()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2924, in one_or_none
-    ret = list(self)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2995, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3018, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
- [SQL: 'SELECT "user".id AS user_id, "user".username AS user_username, "user".email AS user_email, "user".password_hash AS user_password_hash, "user".about_me AS user_about_me, "user".last_seen AS user_last_seen \nFROM "user" \nWHERE "user".id = %(param_1)s'] [parameters: {'param_1': 1}] (Background on this error at: http://sqlalche.me/e/f405)
-2018-12-09 22:32:08,564 ERROR: Exception on /favicon.ico [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-psycopg2.ProgrammingError: relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 12, in before_request
-    if current_user.is_authenticated:
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
-    return self.__local()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 335, in _get_user
-    current_app.login_manager._load_user()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
-    return self.reload_user()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
-    user = self.user_callback(user_id)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 10, in load_user
-    return User.query.get(int(id))
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 924, in get
-    ident, loading.load_on_pk_identity)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1007, in _get_impl
-    return db_load_fn(self, primary_key_identity)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 250, in load_on_pk_identity
-    return q.one()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2954, in one
-    ret = self.one_or_none()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2924, in one_or_none
-    ret = list(self)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2995, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3018, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
- [SQL: 'SELECT "user".id AS user_id, "user".username AS user_username, "user".email AS user_email, "user".password_hash AS user_password_hash, "user".about_me AS user_about_me, "user".last_seen AS user_last_seen \nFROM "user" \nWHERE "user".id = %(param_1)s'] [parameters: {'param_1': 1}] (Background on this error at: http://sqlalche.me/e/f405)
-2018-12-10 08:13:54,967 INFO: MicroBlog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:45]
-2018-12-10 08:14:11,477 ERROR: Exception on /login [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+2018-12-11 08:26:49,240 ERROR: Exception on /index [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -483,61 +12,27 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 40, in login
-    user = User.query.filter_by(username=form.username.data).first()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 512, in __get__
-    mapper = orm.class_mapper(type)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\base.py", line 421, in class_mapper
-    mapper = _inspect_mapped_class(class_, configure=configure)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\base.py", line 400, in _inspect_mapped_class
-    mapper._configure_all()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\mapper.py", line 1276, in _configure_all
-    configure_mappers()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\mapper.py", line 3033, in configure_mappers
-    mapper._post_configure_properties()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\mapper.py", line 1832, in _post_configure_properties
-    prop.init()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\interfaces.py", line 183, in init
-    self.do_init()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 1656, in do_init
-    self._setup_join_conditions()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 1731, in _setup_join_conditions
-    can_be_synced_fn=self._columns_are_mapped
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 1999, in __init__
-    self._annotate_fks()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 2197, in _annotate_fks
-    self._annotate_present_fks()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 2254, in _annotate_present_fks
-    {"binary": visit_binary}
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\visitors.py", line 300, in cloned_traverse
-    obj = clone(obj)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\visitors.py", line 296, in clone
-    meth(newelem)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 2242, in visit_binary
-    col = is_foreign(binary.left, binary.right)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\relationships.py", line 2224, in is_foreign
-    if a.references(b):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\schema.py", line 1311, in references
-    if fk.column.proxy_set.intersection(column.proxy_set):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 767, in __get__
-    obj.__dict__[self.__name__] = result = self.fget(obj)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\schema.py", line 1892, in column
-    tablekey)
-sqlalchemy.exc.NoReferencedTableError: Foreign key associated with column 'followers.follower_id' could not find table 'User' with which to generate a foreign key to target column 'id'
-2018-12-10 08:15:06,189 INFO: MicroBlog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:45]
-2018-12-10 08:15:17,593 ERROR: Exception on /login [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-psycopg2.ProgrammingError: relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
-
-
-The above exception was the direct cause of the following exception:
-
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 32, in index
+    post = Post(body=form.post.data, author=current_user, language=language)
+  File "<string>", line 4, in __init__
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\state.py", line 424, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 249, in reraise
+    raise value
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\state.py", line 421, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\ext\declarative\base.py", line 747, in _declarative_constructor
+    (k, cls_.__name__))
+TypeError: 'language' is an invalid keyword argument for Post
+2018-12-11 08:27:41,378 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
+2018-12-11 08:27:46,981 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
+2018-12-11 08:28:28,677 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
+2018-12-11 08:28:31,788 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
+2018-12-11 08:28:37,334 ERROR: Exception on / [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -551,52 +46,38 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 40, in login
-    user = User.query.filter_by(username=form.username.data).first()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2895, in first
-    ret = list(self[0:1])
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2687, in __getitem__
-    return list(res)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2995, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3018, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
- [SQL: 'SELECT "user".id AS user_id, "user".username AS user_username, "user".email AS user_email, "user".password_hash AS user_password_hash, "user".about_me AS user_about_me, "user".last_seen AS user_last_seen \nFROM "user" \nWHERE "user".username = %(username_1)s \n LIMIT %(param_1)s'] [parameters: {'username_1': 'BalintBalogh', 'param_1': 1}] (Background on this error at: http://sqlalche.me/e/f405)
-2018-12-10 08:16:45,902 INFO: MicroBlog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:45]
-2018-12-10 08:16:58,081 ERROR: Exception on /login [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-psycopg2.ProgrammingError: relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
-
-
-The above exception was the direct cause of the following exception:
-
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 32, in index
+    post = Post(body=form.post.data, author=current_user, language=language)
+  File "<string>", line 4, in __init__
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\state.py", line 424, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 249, in reraise
+    raise value
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\state.py", line 421, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\ext\declarative\base.py", line 747, in _declarative_constructor
+    (k, cls_.__name__))
+TypeError: 'language' is an invalid keyword argument for Post
+2018-12-11 08:29:52,409 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
+2018-12-11 08:30:11,227 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
+2018-12-11 08:30:15,590 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
+2018-12-11 08:54:53,711 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
+2018-12-11 08:56:42,382 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
+2018-12-11 08:56:52,665 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
+2018-12-11 09:20:51,611 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:58]
+2018-12-11 15:31:08,364 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:12:51,091 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:17:58,899 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:18:05,425 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:18:10,261 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:19:15,000 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:19:29,798 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:20:06,301 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:21:20,608 ERROR: Exception on /auth/reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6NCwiZXhwIjoxNTQ0NTQyMjYzLjQxNjUzNzh9.N9V0-6gRnbSW_j229rWTQFAWOi9UD8HL_Jsa4GvNnhA [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -610,35 +91,26 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\routes.py", line 40, in login
-    user = User.query.filter_by(username=form.username.data).first()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2895, in first
-    ret = list(self[0:1])
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2687, in __getitem__
-    return list(res)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2995, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3018, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
-    context)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) relation "user" does not exist
-LINE 2: FROM "user" 
-             ^
- [SQL: 'SELECT "user".id AS user_id, "user".username AS user_username, "user".email AS user_email, "user".password_hash AS user_password_hash, "user".about_me AS user_about_me, "user".last_seen AS user_last_seen \nFROM "user" \nWHERE "user".username = %(username_1)s \n LIMIT %(param_1)s'] [parameters: {'username_1': 'BalintBalogh', 'param_1': 1}] (Background on this error at: http://sqlalche.me/e/f405)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\auth\routes.py", line 67, in reset_password
+    if current_user.is_authencticated:
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'AnonymousUserMixin' object has no attribute 'is_authencticated'
+2018-12-11 16:21:47,152 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+2018-12-11 16:22:09,337 ERROR: Exception on /auth/login [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\auth\routes.py", line 19, in login
+    if user is not None or not user.check_password(form.password.data):
+AttributeError: 'NoneType' object has no attribute 'check_password'
