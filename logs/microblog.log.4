@@ -1,112 +1,105 @@
-2018-12-11 21:48:27,025 ERROR: Exception on /favicon.ico [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+2018-12-12 22:43:16,654 ERROR: Exception on /logout [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: relation "task" does not exist
+LINE 2: FROM task 
+             ^
+
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\errors\handlers.py", line 8, in not_found_error
+    return render_template('errors/404.html'), 404
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 17, in before_request
-    db.session.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
-    self.transaction.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
-    fn(*args, **kw)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 34, in after_commit
-    for obj in session._changes['add']:
-TypeError: 'NoneType' object is not subscriptable
-2018-12-11 21:48:38,444 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 21:48:47,851 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 21:48:52,967 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 21:48:58,807 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 21:49:00,568 ERROR: Exception on / [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 17, in before_request
-    db.session.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
-    self.transaction.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
-    fn(*args, **kw)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 34, in after_commit
-    for obj in session._changes['add']:
-TypeError: 'NoneType' object is not subscriptable
-2018-12-11 21:49:01,895 ERROR: Exception on /favicon.ico [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 17, in before_request
-    db.session.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
-    self.transaction.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
-    fn(*args, **kw)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 34, in after_commit
-    for obj in session._changes['add']:
-TypeError: 'NoneType' object is not subscriptable
-2018-12-11 21:50:05,358 ERROR: Exception on /login [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 17, in before_request
-    db.session.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
-    self.transaction.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
-    fn(*args, **kw)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 34, in after_commit
-    for obj in session._changes['add']:
-TypeError: 'NoneType' object is not subscriptable
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\templates\errors\404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Balint\PycharmProjects\microblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\Balint\PycharmProjects\microblog\app\templates\base.html", line 56, in block "content"
+    {% if current_user.is_authenticated %}
+  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 157, in get_tasks_in_progress
+    return Task.query.filter_by(user=self, complete=False).all()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2843, in all
+    return list(self)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2995, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3018, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
+    raise value.with_traceback(tb)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) relation "task" does not exist
+LINE 2: FROM task 
+             ^
+ [SQL: 'SELECT task.id AS task_id, task.name AS task_name, task.description AS task_description, task.user_id AS task_user_id, task.complete AS task_complete \nFROM task \nWHERE %(param_1)s = task.user_id AND task.complete = false'] [parameters: {'param_1': 1}] (Background on this error at: http://sqlalche.me/e/f405)
+2018-12-12 22:45:28,494 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:81]
+2018-12-12 22:45:34,067 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:81]
+2018-12-12 22:51:18,050 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:81]
+2018-12-12 22:51:26,745 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:81]
+2018-12-12 22:51:43,204 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:81]
+2018-12-12 22:51:53,676 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:81]
+2018-12-12 22:51:59,046 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:81]
+2018-12-12 22:56:04,921 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:81]
+2018-12-12 22:56:10,161 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:81]
+2018-12-12 22:56:15,880 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:81]

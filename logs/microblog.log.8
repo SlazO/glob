@@ -1,58 +1,16 @@
-2018-12-11 16:23:09,450 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:23:17,882 ERROR: Exception on /auth/login [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+2018-12-12 22:40:22,770 ERROR: Exception on / [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\auth\routes.py", line 19, in login
-    if user is not None or not User.check_password(form.password.data):
-TypeError: check_password() missing 1 required positional argument: 'password'
-2018-12-11 16:23:31,672 ERROR: Exception on /auth/login [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\auth\routes.py", line 19, in login
-    if user is not None or not User.check_password(form.password.data):
-TypeError: check_password() missing 1 required positional argument: 'password'
-2018-12-11 16:25:09,738 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:25:26,052 ERROR: Exception on /auth/login [POST] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\auth\routes.py", line 19, in login
-    if user is None or not User.check_password(form.password.data):
-TypeError: check_password() missing 1 required positional argument: 'password'
-2018-12-11 16:25:36,159 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:25:45,819 ERROR: Exception on /explore [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: relation "task" does not exist
+LINE 2: FROM task 
+             ^
+
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -68,38 +26,62 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 46, in explore
-    page = request.arg.get('page', 1, type=int)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-AttributeError: 'Request' object has no attribute 'arg'
-2018-12-11 16:26:06,322 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:26:55,424 ERROR: Exception on /search [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 47, in index
+    prev_url=prev_url)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 128, in search
-    if total > page * current_app.config['POST_PER_PAGE'] else None
-KeyError: 'POST_PER_PAGE'
-2018-12-11 16:27:21,744 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:36:48,117 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:40:31,798 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:46:19,890 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 16:48:59,026 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 19:20:06,156 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 19:43:46,909 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 19:43:58,719 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 19:48:49,140 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
-2018-12-11 20:18:18,181 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:77]
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\templates\index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\Balint\PycharmProjects\microblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\Balint\PycharmProjects\microblog\app\templates\base.html", line 80, in block "content"
+    {% if current_user.is_authenticated %}
+  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 174, in get_tasks_in_progress
+    return Task.query.filter_by(user=self, complete=False).all()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2843, in all
+    return list(self)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2995, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3018, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
+    raise value.with_traceback(tb)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) relation "task" does not exist
+LINE 2: FROM task 
+             ^
+ [SQL: 'SELECT task.id AS task_id, task.name AS task_name, task.description AS task_description, task.user_id AS task_user_id, task.complete AS task_complete \nFROM task \nWHERE %(param_1)s = task.user_id AND task.complete = false'] [parameters: {'param_1': 1}] (Background on this error at: http://sqlalche.me/e/f405)
+2018-12-12 22:41:25,373 INFO: Microblog startup [in C:\Users\Balint\PycharmProjects\microblog\app\__init__.py:81]

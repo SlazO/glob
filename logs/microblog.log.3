@@ -1,4 +1,39 @@
-2018-12-11 21:50:06,700 ERROR: Exception on /favicon.ico [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+2018-12-12 22:56:28,484 ERROR: Exception on /export_posts [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 493, in connect
+    sock = self._connect()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 550, in _connect
+    raise err
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\client.py", line 3443, in execute
+    return execute(conn, stack, raise_on_error)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
+    connection.send_packed_command(all_cmds)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 594, in send_packed_command
+    self.connect()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 493, in connect
+    sock = self._connect()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 550, in _connect
+    raise err
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,24 +43,67 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 17, in before_request
-    db.session.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
-    self.transaction.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
-    fn(*args, **kw)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 34, in after_commit
-    for obj in session._changes['add']:
-TypeError: 'NoneType' object is not subscriptable
-2018-12-11 21:50:12,335 ERROR: Exception on /login [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 214, in export_posts
+    current_user.launch_task('export_posts', _('Export posts...'))
+  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 150, in launch_task
+    *args, **kwargs)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\rq\queue.py", line 316, in enqueue
+    job_id=job_id, at_front=at_front, meta=meta)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\rq\queue.py", line 263, in enqueue_call
+    job = self.enqueue_job(job, at_front=at_front)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\rq\queue.py", line 341, in enqueue_job
+    pipe.execute()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\client.py", line 3458, in execute
+    return execute(conn, stack, raise_on_error)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
+    connection.send_packed_command(all_cmds)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 594, in send_packed_command
+    self.connect()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
+2018-12-12 22:57:01,936 ERROR: Exception on /export_posts [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 493, in connect
+    sock = self._connect()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 550, in _connect
+    raise err
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\client.py", line 3443, in execute
+    return execute(conn, stack, raise_on_error)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
+    connection.send_packed_command(all_cmds)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 594, in send_packed_command
+    self.connect()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 493, in connect
+    sock = self._connect()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 550, in _connect
+    raise err
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 538, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -35,74 +113,28 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 17, in before_request
-    db.session.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
-    self.transaction.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
-    fn(*args, **kw)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 34, in after_commit
-    for obj in session._changes['add']:
-TypeError: 'NoneType' object is not subscriptable
-2018-12-11 21:50:13,606 ERROR: Exception on /favicon.ico [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 17, in before_request
-    db.session.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
-    self.transaction.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
-    fn(*args, **kw)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 34, in after_commit
-    for obj in session._changes['add']:
-TypeError: 'NoneType' object is not subscriptable
-2018-12-11 21:50:17,160 ERROR: Exception on /register [GET] [in c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 17, in before_request
-    db.session.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 954, in commit
-    self.transaction.commit()
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 474, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\sqlalchemy\event\attr.py", line 246, in __call__
-    fn(*args, **kw)
-  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 34, in after_commit
-    for obj in session._changes['add']:
-TypeError: 'NoneType' object is not subscriptable
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Balint\PycharmProjects\microblog\app\main\routes.py", line 214, in export_posts
+    current_user.launch_task('export_posts', _('Export posts...'))
+  File "C:\Users\Balint\PycharmProjects\microblog\app\models.py", line 150, in launch_task
+    *args, **kwargs)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\rq\queue.py", line 316, in enqueue
+    job_id=job_id, at_front=at_front, meta=meta)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\rq\queue.py", line 263, in enqueue_call
+    job = self.enqueue_job(job, at_front=at_front)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\rq\queue.py", line 341, in enqueue_job
+    pipe.execute()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\client.py", line 3458, in execute
+    return execute(conn, stack, raise_on_error)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\client.py", line 3310, in _execute_transaction
+    connection.send_packed_command(all_cmds)
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 594, in send_packed_command
+    self.connect()
+  File "c:\users\balint\pycharmprojects\microblog\venv\lib\site-packages\redis\connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to None:6379. No connection could be made because the target machine actively refused it.
